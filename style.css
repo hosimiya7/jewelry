@@ -1,1 +1,462 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+/*============
+初期設定
+=============*/
+@font-face {
+  font-family: "Yugoth";
+  src: url(font/YuGothR.ttc);
+}
+
+@font-face {
+  font-family: "YuGothB";
+  src: url(font/YuGothB.ttc);
+}
+
+/*============
+  変数定義
+=============*/
+/*============
+全体設定
+=============*/
+* {
+  line-height: 1.6;
+  letter-spacing: 1.6px;
+  font-family: "Yugoth";
+  font-size: 1rem;
+}
+
+/*============
+コンポーネント
+=============*/
+.logo {
+  width: 100px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+h1 {
+  font-family: "Shippori Mincho";
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-family: "Domine", serif;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-family: "Domine", serif;
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-family: "Shippori Mincho";
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+span {
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.content-heading {
+  font-family: "Shippori Mincho";
+  font-size: 1.05rem;
+  font-weight: bolder;
+}
+
+.access-card {
+  background-color: #afcce92f;
+  border-radius: 10px;
+}
+
+.botton {
+  background-color: #f8f8f8;
+  padding: 0.8rem 1.6rem;
+  border-bottom: 10px;
+  display: inline-block;
+  width: 220px;
+  text-align: left;
+}
+
+.botton:hover {
+  background-color: #d6d6d6;
+}
+
+i {
+  font-size: 18px;
+  margin-right: 1.5rem;
+}
+
+.fa-phone {
+  font-size: 16px;
+}
+
+.fa-external-link-alt {
+  font-size: 16px;
+  margin: 0;
+}
+
+.icon {
+  width: 20px;
+  vertical-align: text-top;
+  margin-right: 1.3rem;
+}
+
+img {
+  width: 100%;
+}
+
+/*============
+nav ハンバーガーメニュー
+=============*/
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+}
+
+.open nav {
+  left: 0;
+  opacity: 1;
+}
+
+nav .inner {
+  padding: 25px;
+}
+
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav .inner ul li {
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+  background: #e4e4e4;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    left: -220px;
+    width: 220px;
+  }
+}
+
+/*============
+  .toggle_btn
+  =============*/
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+.open .toggle_btn span {
+  background-color: #fff;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+/*============
+  #mask
+  =============*/
+#mask {
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/*============
+  要素 header
+  =============*/
+.header-top {
+  background-color: #ffffff;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+.header-top .logo {
+  margin: 0.5rem;
+}
+
+.header-main .header-main-img {
+  margin-left: 20vw;
+}
+
+.header-main .header-main-img img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header-main .header-main-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.5rem;
+}
+
+/*============
+  要素 main
+  =============*/
+.concept {
+  margin-top: 6rem;
+}
+
+.concept .concept-img {
+  margin-left: 20%;
+  width: 80%;
+  height: 200px;
+  background-image: url(img/concept-img.jpg);
+  background-size: cover;
+}
+
+.concept .concept-content {
+  background-color: #ffffffe0;
+  width: 90%;
+  margin: -1rem auto 0 auto;
+}
+
+.concept .concept-content .content-heading {
+  padding-top: 1rem;
+}
+
+.concept .concept-content .concept-text p {
+  margin: 1.5rem 0.5rem 0 0;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.works .works-content {
+  margin-top: 6rem;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffffe0), to(#afcce950));
+  background: linear-gradient(#ffffffe0, #afcce950);
+}
+
+.works .works-content .content-sub-heading {
+  text-align: left;
+}
+
+.works .works-content .works-content-jewelry {
+  margin-top: 3rem;
+}
+
+.works .works-content .content-sub-heading {
+  text-align: center;
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.works .works-content .works-content-img {
+  width: 80%;
+  margin: 0rem auto 0 auto;
+}
+
+.works .works-content .works-content-img img {
+  margin-top: 2rem;
+}
+
+.works .works-content .worls-content-gemstone {
+  margin-top: 3rem;
+}
+
+.works .works-content .botton {
+  margin: 3rem 0;
+}
+
+.access .access-content {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.access .access-cards {
+  margin-top: 1rem;
+}
+
+.access .access-card {
+  margin: 1rem auto 0 auto;
+  padding-bottom: 2rem;
+  width: 90%;
+}
+
+.access .access-card img {
+  width: 80%;
+  margin-top: 2rem;
+}
+
+.access .access-card h4 {
+  margin-top: 3rem;
+}
+
+.access .access-card table {
+  margin: 2rem auto 0 auto;
+}
+
+.access .access-card table tr th,
+.access .access-card table tr td {
+  font-size: 0.9rem;
+}
+
+.access .access-card table tr th {
+  width: 71px;
+  margin: 0 auto;
+}
+
+.access .access-card table tr td {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.contact .contact-content {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  background-image: url(img/contact-img.jpg);
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  background-size: cover;
+}
+
+.contact h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact .contact-botton {
+  margin-top: 1.5rem;
+}
+
+.contact .contact-botton .botton {
+  margin: 0.5rem auto 0 auto;
+}
+
+.footer-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.footer-wrapper .footer-top img {
+  margin: 0 auto;
+}
+
+.footer-wrapper .footer-top .footer-top-link {
+  margin-top: 2rem;
+}
+
+.footer-wrapper .footer-top .footer-top-link ul li a {
+  font-size: 0.9rem;
+}
+
+.footer-wrapper .footer-botton {
+  margin-top: 2rem;
+}
+
+.footer-wrapper .footer-botton .botton {
+  margin: 0.5rem auto 0 auto;
+}
+
+.footer-wrapper .copy-right {
+  margin-top: 2rem;
+}
+
+.footer-wrapper .copy-right p {
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=style.css.map */

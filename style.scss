@@ -1,0 +1,444 @@
+/*============
+初期設定
+=============*/
+
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Yugoth";
+    src: url(font/YuGothR.ttc);
+}
+@font-face {
+    font-family: "YuGothB";
+    src: url(font/YuGothB.ttc);
+}
+
+/*============
+  変数定義
+=============*/
+
+$main-color: #ffffff;
+$sub-color-white: #ffffffe0;
+$sub-color-blue: #afcce92f;
+$sub-color-blue-gradation-bottom: #afcce950;
+$sub-color-gray: #f8f8f8;
+$sub-color-gray-hover: #d6d6d6;
+$font-color: #222222;
+
+$font-family-title: "Domine", serif;
+$font-family-heading: "Shippori Mincho";
+$font-family-text: "Yugoth";
+
+$breakpoints: (
+    "md": "screen and (min-width: 560px)",
+    "lg": "screen and (min-width: 900px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/*============
+全体設定
+=============*/
+
+* {
+    line-height: 1.6;
+    letter-spacing: 1.6px;
+    font-family: $font-family-text;
+    font-size: 1rem;
+}
+
+/*============
+コンポーネント
+=============*/
+
+.logo {
+    width: 100px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+h1 {
+    font-family: $font-family-heading;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-family: $font-family-title;
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-family: $font-family-title;
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-family: $font-family-heading;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+span {
+    display: inline-block;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.content-heading {
+    font-family: $font-family-heading;
+    font-size: 1.05rem;
+    font-weight: bolder;
+}
+
+.access-card {
+    background-color: $sub-color-blue;
+    border-radius: 10px;
+}
+
+.botton {
+    background-color: $sub-color-gray;
+    padding: 0.8rem 1.6rem;
+    border-bottom: 10px;
+    display: inline-block;
+    width: 220px;
+    text-align: left;
+    &:hover {
+        background-color: $sub-color-gray-hover;
+    }
+}
+
+i {
+    font-size: 18px;
+    margin-right: 1.5rem;
+}
+.fa-phone {
+    font-size: 16px;
+}
+.fa-external-link-alt {
+    font-size: 16px;
+    margin: 0;
+}
+
+.icon {
+    width: 20px;
+    vertical-align: text-top;
+    margin-right: 1.3rem;
+}
+
+img {
+    width: 100%;
+}
+
+/*============
+nav ハンバーガーメニュー
+=============*/
+nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    background: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all 0.5s;
+    z-index: 3;
+    opacity: 0;
+}
+.open nav {
+    left: 0;
+    opacity: 1;
+}
+nav .inner {
+    padding: 25px;
+}
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav .inner ul li {
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+nav .inner ul li a {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    padding: 1em;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+nav .inner ul li a:hover {
+    background: #e4e4e4;
+}
+@media screen and (max-width: 767px) {
+    nav {
+        left: -220px;
+        width: 220px;
+    }
+}
+/*============
+  .toggle_btn
+  =============*/
+.toggle_btn {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 3;
+}
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+.toggle_btn span:nth-child(1) {
+    top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+    top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+    bottom: 4px;
+}
+.open .toggle_btn span {
+    background-color: #fff;
+}
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(10px) rotate(-315deg);
+    transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+    -webkit-transform: translateY(-10px) rotate(315deg);
+    transform: translateY(-10px) rotate(315deg);
+}
+/*============
+  #mask
+  =============*/
+#mask {
+    display: none;
+    transition: all 0.5s;
+}
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/*============
+  要素 header
+  =============*/
+
+.header-top {
+    background-color: $main-color;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    .logo {
+        margin: 0.5rem;
+    }
+}
+
+.header-main {
+    .header-main-img {
+        margin-left: 20vw;
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+    }
+    .header-main-text {
+        position: absolute;
+        bottom: 2rem;
+        left: 0.5rem;
+    }
+}
+
+/*============
+  要素 main
+  =============*/
+
+.concept {
+    margin-top: 6rem;
+    .concept-img {
+        margin-left: 20%;
+        width: 80%;
+        height: 200px;
+        background-image: url(img/concept-img.jpg);
+        background-size: cover;
+    }
+    .concept-content {
+        background-color: $sub-color-white;
+        width: 90%;
+        margin: -1rem auto 0 auto;
+        .content-heading {
+            padding-top: 1rem;
+        }
+        .concept-text {
+            p {
+                margin: 1.5rem 0.5rem 0 0;
+                text-align: justify;
+                text-justify: inter-ideograph;
+            }
+        }
+    }
+}
+
+.works {
+    .works-content {
+        margin-top: 6rem;
+        text-align: center;
+        background: linear-gradient($sub-color-white, $sub-color-blue-gradation-bottom);
+        .content-sub-heading {
+            text-align: left;
+        }
+        .works-content-jewelry {
+            margin-top: 3rem;
+        }
+        .content-sub-heading {
+            text-align: center;
+            margin-top: 0.2rem;
+            font-size: 0.9rem;
+        }
+        .works-content-img {
+            width: 80%;
+            margin: 0rem auto 0 auto;
+            img {
+                margin-top: 2rem;
+            }
+        }
+        .worls-content-gemstone {
+            margin-top: 3rem;
+        }
+        .botton {
+            margin: 3rem 0;
+        }
+    }
+}
+
+.access {
+    .access-content {
+        margin-top: 6rem;
+        text-align: center;
+    }
+    .access-cards {
+        margin-top: 1rem;
+    }
+    .access-card {
+        margin: 1rem auto 0 auto;
+        padding-bottom: 2rem;
+        width: 90%;
+        img {
+            width: 80%;
+            margin-top: 2rem;
+        }
+        h4 {
+            margin-top: 3rem;
+        }
+        table {
+            margin: 2rem auto 0 auto;
+            // width: 90%;
+            tr {
+                th,
+                td {
+                    font-size: 0.9rem;
+                }
+                th {
+                    width: 71px;
+                    margin: 0 auto;
+                }
+                td {
+                    text-align: left;
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    .contact-content {
+        margin-top: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        text-align: center;
+        background-image: url(img/contact-img.jpg);
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: lighten;
+        background-size: cover;
+    }
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+    .contact-botton {
+        margin-top: 1.5rem;
+
+        .botton {
+            margin: 0.5rem auto 0 auto;
+        }
+    }
+}
+
+.footer-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+    .footer-top {
+        img {
+            margin: 0 auto;
+        }
+        .footer-top-link {
+            margin-top: 2rem;
+            ul {
+                li {
+                    a {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+    .footer-botton {
+        margin-top: 2rem;
+        .botton {
+            margin: 0.5rem auto 0 auto;
+        }
+    }
+    .copy-right {
+        margin-top: 2rem;
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}

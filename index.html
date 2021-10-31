@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Shippori+Mincho&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -15,26 +18,43 @@
     <header>
         <div class="header-wrapper">
             <div class="header-top flex">
-                <img src="img/logo.png" alt="">
-                <div class="flex">
-                    <ul>
-                        <li>
-                            <a href="">concept</a>
-                        </li>
-                        <li>
-                            <a href="">works</a>
-                        </li>
-                        <li>
-                            <a href="">access</a>
-                        </li>
-                        <li>
-                            <a href="">contact</a>
-                        </li>
-                        <li>
-                            <a href="">online shop<i class="fas fa-external-link-alt"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                <img src="img/logo.png" alt="" class="logo">
+
+                <div id="navArea">
+
+                    <nav>
+                      <div class="inner">
+                        <ul>
+                            <ul>
+                                <li>
+                                    <a href="">concept</a>
+                                </li>
+                                <li>
+                                    <a href="">works</a>
+                                </li>
+                                <li>
+                                    <a href="">access</a>
+                                </li>
+                                <li>
+                                    <a href="">contact</a>
+                                </li>
+                                <li>
+                                    <a href="">online shop<i class="fas fa-external-link-alt"></i></a>
+                                </li>
+                            </ul>
+                        </ul>
+                      </div>
+                    </nav>
+
+                    <div class="toggle_btn">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+
+                    <div id="mask"></div>
+
+                  </div>
             </div>
             <div class="header-main">
                 <div class="header-main-img">
@@ -42,8 +62,8 @@
                 </div>
                 <div class="header-main-text">
                     <h1>
-                        何気ない日常に
-                        あなただけの輝きを添えて
+                        何気ない日常に<br>
+                        <span>あなただけの輝きを</span><span>添えて</span>
                     </h1>
                 </div>
             </div>
@@ -53,7 +73,6 @@
         <div class="main-wrapper">
             <div class="concept">
                 <div class="concept-img">
-
                 </div>
                 <div class="concept-content content">
                     <p class="content-heading">
@@ -85,7 +104,7 @@
             <div class="works">
                 <div class="works-content content">
                     <p class="content-heading">
-                        私たちにとってのジュエリーとは
+                        1つ1つに想いを込めて
                     </p>
                     <h2>
                         works
@@ -95,7 +114,8 @@
                             jewelry
                         </h3>
                         <p class="content-sub-heading">
-                            「永遠の輝き」をテーマに作っています。あなたの大切な人に是非。
+                            「永遠の輝き」<br>
+                            あなたの大切な人に一生の贈り物を
                         </p>
                         <div class="works-content-img flex">
                             <img src="img/works-jewerly-1.jpg" alt="">
@@ -108,7 +128,7 @@
                             gemstone
                         </h3>
                         <p class="content-sub-heading">
-                            「唯一無二の宝物」天然石を使ったハンドメイド作品です。あなたのお気に入りを探してみてください。
+                            「唯一無二の宝物」<br>天然石を使ったハンドメイド作品です<br>あなたのお気に入りを<span>探してみてください</span>
                         </p>
                         <div class="works-content-img flex">
                             <img src="img/works-gemstone-1.jpg" alt="">
@@ -116,7 +136,7 @@
                             <img src="img/works-gemstone-3.jpg" alt="">
                         </div>
                     </div>
-                    <a href="" class="botton"><img src="" alt="" class="icon">online shop
+                    <a href="" class="botton"><img src="img/shop-icon.png" alt="" class="icon">online shop
                         <span class="font-shippori">へ</span>
                     </a>
                 </div>
@@ -132,14 +152,14 @@
                     </h2>
                     <div class="access-cards flex">
                         <div class="access-card card-jewerly">
-                            <img src="" alt="">
                             <div class="card-text">
+                                <img src="img/access-jewerly-img.jpg" alt="">
                                 <h4>ジュエリー店</h4>
                                 <table>
                                     <tr>
                                         <th>住所</th>
                                         <td>
-                                            岡山県新見市井倉923-6
+                                            岡山県新見市井倉<span>923-6</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -170,14 +190,14 @@
                             </div>
                         </div>
                         <div class="access-card card-gemstone">
-                            <img src="" alt="">
                             <div class="card-text">
+                                <img src="img/access-gemstone-img.jpg" alt="">
                                 <h4>ハンドメイド店</h4>
                                 <table>
                                     <tr>
                                         <th>住所</th>
                                         <td>
-                                            岡山県新見市井倉948-7
+                                            岡山県新見市井倉<span>948-7</span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -220,9 +240,9 @@
                         contact
                     </h2>
                     <p>
-                        Instagramでは、商品の入荷情報のお知らせや人気商品の紹介をしております。
+                        <span>Instagramでは</span><span>商品の入荷情報のお知らせや</span><span>人気商品の紹介をしております。</span>
                     </p>
-                    <div class="contact-botton">
+                    <div class="contact-botton flex">
                         <a href="" class="botton"><i class="fab fa-instagram"></i>Instagram</a>
                         <a href="" class="botton"><i class="fas fa-phone"></i>000-0000-000
                         </a>
@@ -236,8 +256,8 @@
     <footer>
         <div class="footer-wrapper">
             <div class="footer-top flex">
-                <img src="img/logo.png" alt="">
-                <div class="flex">
+                <img src="img/logo.png" alt="" class="logo">
+                <div class="footer-top-link flex">
                     <ul>
                         <li>
                             <a href="">concept</a>
@@ -259,7 +279,7 @@
             </div>
             <div class="footer-botton flex">
                 <a href="" class="botton"><i class="fab fa-instagram"></i>Instagram</a>
-                <a href="" class="botton"><img src="" alt="" class="icon">online shop
+                <a href="" class="botton"><img src="img/shop-icon.png" alt="" class="icon">online shop
                     <span class="font-shippori">へ</span>
                 </a>
             </div>
@@ -270,6 +290,8 @@
             </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
