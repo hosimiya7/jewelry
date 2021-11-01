@@ -191,6 +191,17 @@ nav {
   opacity: 0;
 }
 
+@media screen and (min-width: 560px) {
+  nav {
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    background: none;
+    overflow-y: hidden;
+    height: 3rem;
+  }
+}
+
 .open nav {
   left: 0;
   opacity: 1;
@@ -200,10 +211,27 @@ nav .inner {
   padding: 25px;
 }
 
+@media screen and (min-width: 560px) {
+  nav .inner {
+    padding: 15px 10px 25px 25px;
+  }
+}
+
 nav .inner ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (min-width: 560px) {
+  nav .inner ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
 }
 
 nav .inner ul li {
@@ -212,9 +240,15 @@ nav .inner ul li {
   border-bottom: 1px solid #333;
 }
 
+@media screen and (min-width: 560px) {
+  nav .inner ul li {
+    border: none;
+  }
+}
+
 nav .inner ul li a {
   display: block;
-  color: #333;
+  color: #222222;
   font-size: 14px;
   padding: 1em;
   text-decoration: none;
@@ -223,10 +257,34 @@ nav .inner ul li a {
 }
 
 nav .inner ul li a:hover {
+  color: #d6d6d6;
+}
+
+@media screen and (min-width: 560px) {
+  nav .inner ul li a {
+    font-family: "Domine", serif;
+    color: #222222;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  nav .inner ul li a {
+    padding: 0 1rem 0.5rem 1rem;
+  }
+}
+
+nav .inner ul li a:hover {
   background: #e4e4e4;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 560px) {
+  nav .inner ul li a:hover {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
   nav {
     left: -220px;
     width: 220px;
@@ -247,6 +305,12 @@ nav .inner ul li a:hover {
   transition: all 0.5s;
   cursor: pointer;
   z-index: 3;
+}
+
+@media screen and (min-width: 560px) {
+  .toggle_btn {
+    display: none;
+  }
 }
 
 .toggle_btn span {
