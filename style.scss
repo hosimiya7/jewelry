@@ -63,27 +63,43 @@ $breakpoints: (
     display: flex;
     flex-wrap: wrap;
     flex-flow: column;
+    @include mq(md) {
+        flex-flow: row;
+    }
 }
 
 h1 {
     font-family: $font-family-heading;
     font-size: 1.5rem;
+    @include mq(md) {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
 }
 
 h2 {
     font-family: $font-family-title;
     font-size: 1.7rem;
+    @include mq(md) {
+        font-size: 2rem;
+    }
 }
 
 h3 {
     font-family: $font-family-title;
     font-size: 1.3rem;
+    @include mq(md) {
+        font-size: 1.5rem;
+    }
 }
 
 h4 {
     font-family: $font-family-heading;
     font-size: 1.2rem;
     font-weight: bolder;
+    @include mq(md) {
+        font-size: 1.5rem;
+    }
 }
 
 span {
@@ -110,6 +126,9 @@ span {
     display: inline-block;
     width: 220px;
     text-align: left;
+    @include mq(md) {
+        text-align: center;
+    }
     &:hover {
         background-color: $sub-color-gray-hover;
     }
@@ -118,6 +137,9 @@ span {
 i {
     font-size: 18px;
     margin-right: 1.5rem;
+    @include mq(md) {
+        margin-right: 0.5rem;
+    }
 }
 .fa-phone {
     font-size: 16px;
@@ -131,6 +153,9 @@ i {
     width: 20px;
     vertical-align: text-top;
     margin-right: 1.3rem;
+    @include mq(md) {
+        margin-right: 0.5rem;
+    }
 }
 
 img {
@@ -273,6 +298,9 @@ nav .inner ul li a:hover {
 .header-main {
     .header-main-img {
         margin-left: 20vw;
+        @include mq(md) {
+            margin-left: 15vw;
+        }
         img {
             width: 100%;
             height: 100vh;
@@ -292,17 +320,36 @@ nav .inner ul li a:hover {
 
 .concept {
     margin-top: 6rem;
+    @include mq(md) {
+        margin-top: 10rem;
+    }
     .concept-img {
         margin-left: 20%;
         width: 80%;
         height: 200px;
         background-image: url(img/concept-img.jpg);
         background-size: cover;
+        @include mq(md) {
+            height: 400px;
+            margin-left: 15%;
+        }
+        @include mq(lg) {
+            height: 500px;
+        }
     }
     .concept-content {
         background-color: $sub-color-white;
         width: 90%;
         margin: -1rem auto 0 auto;
+        padding: 1rem;
+        @include mq(md) {
+            width: 75%;
+            margin: -12rem 0 0 3rem;
+        }
+        @include mq(lg) {
+            width: 55%;
+            margin: -16rem 0 0 5rem;
+        }
         .content-heading {
             padding-top: 1rem;
         }
@@ -321,6 +368,9 @@ nav .inner ul li a:hover {
         margin-top: 6rem;
         text-align: center;
         background: linear-gradient($sub-color-white, $sub-color-blue-gradation-bottom);
+        @include mq(md) {
+            margin-top: 10rem;
+        }
         .content-sub-heading {
             text-align: left;
         }
@@ -335,8 +385,16 @@ nav .inner ul li a:hover {
         .works-content-img {
             width: 80%;
             margin: 0rem auto 0 auto;
+            @include mq(md) {
+                margin: 0 auto;
+                justify-content: center;
+            }
             img {
                 margin-top: 2rem;
+                @include mq(md) {
+                    width: 30vw;
+                    margin: 2rem 1rem 0 1rem;
+                }
             }
         }
         .worls-content-gemstone {
@@ -352,14 +410,25 @@ nav .inner ul li a:hover {
     .access-content {
         margin-top: 6rem;
         text-align: center;
+        @include mq(md) {
+            margin-top: 10rem;
+        }
     }
     .access-cards {
         margin-top: 1rem;
+        @include mq(md) {
+            margin-top: 3rem;
+            justify-content: space-evenly;
+        }
     }
     .access-card {
         margin: 1rem auto 0 auto;
         padding-bottom: 2rem;
         width: 90%;
+        @include mq(md) {
+            width: 40vw;
+            margin: 1rem 0 0 0;
+        }
         img {
             width: 80%;
             margin-top: 2rem;
@@ -369,11 +438,14 @@ nav .inner ul li a:hover {
         }
         table {
             margin: 2rem auto 0 auto;
-            // width: 90%;
+            padding: 0 0.5rem;
             tr {
                 th,
                 td {
                     font-size: 0.9rem;
+                    @include mq(lg) {
+                        font-size: 1rem;
+                    }
                 }
                 th {
                     width: 71px;
@@ -398,15 +470,25 @@ nav .inner ul li a:hover {
         background-color: rgba(255, 255, 255, 0.8);
         background-blend-mode: lighten;
         background-size: cover;
+        @include mq(md) {
+            margin-top: 8rem;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
     }
     h2 {
         margin-bottom: 0.5rem;
     }
     .contact-botton {
         margin-top: 1.5rem;
-
+        @include mq(md) {
+            justify-content: center;
+        }
         .botton {
             margin: 0.5rem auto 0 auto;
+            @include mq(md) {
+                margin: 1rem 0.5rem 0 0.5rem;
+            }
         }
     }
 }
@@ -414,14 +496,28 @@ nav .inner ul li a:hover {
 .footer-wrapper {
     margin-top: 2rem;
     text-align: center;
+    @include mq(md) {
+        margin-top: 4rem;
+    }
     .footer-top {
         img {
             margin: 0 auto;
+            @include mq(md) {
+                width: 150px;
+                height: fit-content;
+                margin: 0;
+            }
         }
         .footer-top-link {
             margin-top: 2rem;
             ul {
+                @include mq(md) {
+                    justify-content: center;
+                }
                 li {
+                    @include mq(md) {
+                        margin: 0 0.5rem;
+                    }
                     a {
                         font-size: 0.9rem;
                     }
@@ -431,12 +527,49 @@ nav .inner ul li a:hover {
     }
     .footer-botton {
         margin-top: 2rem;
+        @include mq(md) {
+            margin-top: 3rem;
+        }
+        @include mq(md) {
+            justify-content: center;
+        }
         .botton {
             margin: 0.5rem auto 0 auto;
+            @include mq(md) {
+                margin: 1rem 0.5rem 0 0.5rem;
+            }
         }
+    }
+    #page-top {
+        position: fixed;
+        right: 10px;
+        bottom: 30px;
+        height: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transform: rotate(90deg);
+        font-size: 90%;
+        line-height: 1.5rem;
+        color: $font-color;
+        padding: 0 0 0 35px;
+        border-top: solid 1px;
+    }
+    #page-top::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5.5px;
+        left: 0px;
+        border: solid 5px $font-color;
+        border-radius: 50%;
+        transform-origin: left top;
     }
     .copy-right {
         margin-top: 2rem;
+        @include mq(md) {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
         p {
             font-size: 0.8rem;
         }
